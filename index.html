@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JecRod | Backend Developer & Security Research</title>
+  <meta name="description" content="Backend Developer & Security Researcher"/>
+  
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+  <div class="particles" id="particles"></div>
+
+    <nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#intro">About</a></li>
+        <li><a href="#blog">Blog</a></li>      <!-- NEW -->
+        <li><div class="toggle" id="modeToggle"></div>
+    </ul>
+    </nav>
+
+    <header id="home">
+        <div class="hero">
+        <p class="tagline">Security Research • Backend Developer</p>
+        <h1>Hi, I'm JecRod</h1>
+        <p>I speak fluent 1=1--<br>
+   but only to make systems bulletproof.</p>
+        <div>
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#intro" class="btn btn-outline">Learn More About Me</a>
+        </div>
+        </div>
+    </header>
+
+  <!-- NEW INTRO / ABOUT SECTION -->
+  <section id="intro">
+    <div class="intro-img">
+      <img src="./assets/pic/profile.png" alt="JecRod">
+    </div>
+    <div class="intro-content">
+      <h2>About Me</h2>
+      <p>
+        I'm a <strong>Diploma in Information Technology (Digital Technology)</strong> student at <strong>Politeknik Besut, Terengganu</strong></strong>.
+      </p>
+      <p>
+        I specialize in building modern web applications using <strong>React (TypeScript)</strong> and developing secure, scalable <strong>RESTful APIs with Laravel (PHP)</strong>. Passionate about cybersecurity, I actively compete in <strong>Capture The Flag (CTF)</strong> challenges to sharpen my penetration testing and problem-solving skills.
+      </p>
+      <p>
+        Eager to contribute clean code, strong work ethic, and a security-first mindset to a professional team while gaining real-world experience in software development and IT operations. Ready to learn, adapt, and make a meaningful impact.
+      </p>
+      <div class="skills">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Vb.net</span>
+        <span class="skill-tag">Laravel</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">Bash</span>
+        <span class="skill-tag">RestAPI</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      
+      <div class="project-card">
+        <div class="project-img">
+          <img src="./assets/pic/project/opys.png" alt="">
+        </div>
+        <div class="project-info">
+          <h3>FoodOrder AI – Smart Chatbot Auto-Reply System</h3>
+          <p>An advanced FoodOrder platform with real-time emotion detection and multi-modal capabilities.</p>
+          <div class="tags">
+            <span class="tag">React Ts</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">FastAPI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+          <div class="project-img">
+            <span class="blog-category">COMING SOON</span>
+          </div>
+          <div class="project-info">
+              <h3>Musi</h3>
+              <p>Simple music streaming app for Android, allowing users to stream and organize music with unlimited playlists, crossfade, equalizer, and ad-supported YouTube integration.</p>
+              <div class="tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">YouTube API</span>
+                  <span class="tag">Docker</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <span class="blog-category">COMING SOON</span>
+        </div>
+        <div class="project-info">
+          <h3>LuxStay – Smart Hotel Booking Platform</h3>
+          <p>Full-stack hotel booking system with real-time availability, dynamic pricing, secure payments, and AI room recommendations.</p>
+          <div class="tags">
+            <span class="tag">Laravel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG SECTION -->
+    <section id="blog">
+    <h2 class="section-title">Latest Thoughts</h2>
+    <div class="blog-grid">
+
+        <!-- Blog Post 1 -->
+        <article class="blog-card">
+          <div class="blog-thumb">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" alt="SQL Injection terminal">
+            <div class="blog-overlay"></div>
+            <span class="blog-category">Web Security</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <time>Nov 22, 2025</time>
+              <span class="read-time">12 min read</span>
+            </div>
+            <h3>Mastering Modern SQL Injection in 2025</h3>
+            <p>Real-world blind, time-based, OOB, HPP & WAF bypass techniques that still work on production systems today.</p>
+            <a href="posts/sqli-mastery-2025.html" class="blog-link">Read More</a>
+          </div>
+        </article>
+
+        <!-- Blog Post 2 -->
+        <article class="blog-card">
+          <div class="blog-thumb">
+            <img src="./assets/pic/ctf/ctf-cyber-warrior.png" 
+                alt="Terminal running SQL injection and CTF tools">
+            <div class="blog-overlay"></div>
+            <span class="blog-category">CTF Write-Up</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <time>Mei 22, 2025</time>
+              <span class="read-time">15 min read</span>
+            </div>
+            <h3>CTF Cyber Warrior 2025: Full Walkthrough & All Flags</h3>
+            <p>POLYCC CTF 2025 complete write-up — Unix timestamps, Shibuya coordinates, nested ZIPs, Zsteg, broken Python decoders, and Discord hunting.</p>
+            <a href="posts/ctf-cyber-warrior-2025.html" class="blog-link">Read More</a>
+          </div>
+        </article>
+
+        <!-- Blog Post 3 -->
+        <article class="blog-card coming-soon worm-ai">
+            <div class="blog-thumb">
+                <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80" 
+                    alt="Worm AI" 
+                    style="filter: hue-rotate(90deg) saturate(1.4) brightness(0.9);">
+                <div class="blog-overlay"></div>
+                
+                <!-- WORM AI Badge (glowing red/cyan) -->
+                <div class="worm-badge">
+                    <span>WORM AI</span>
+                    <div class="scanline"></div>
+                </div>
+                
+                <!-- <span class="blog-category">Autonomous AI</span> -->
+            </div>
+            <div class="blog-content">
+                <div class="blog-meta">
+                    <time datetime="2025">2025</time>
+                    <span class="read-time">Classified</span>
+                </div>
+                <h3>Building a Self-Replicating AI Worm</h3>
+                <p>How I trained an autonomous agent that spreads across networks, adapts to defenses, and evolves using only stolen compute — inspired by real digital parasites.</p>
+                
+                <a href="javascript:void(0)" class="blog-link worm-link" aria-disabled="true">
+                    Access Restricted — Coming Soon
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- Blog CTA Button with JS Toggle -->
+    <div class="blog-cta">
+        <button id="toggle-posts" 
+                class="btn btn-outline" >
+         View All Posts
+        </button>
+    </div>
+
+    <!-- Hidden Blog Posts (initially hidden) -->
+    <!-- <div id="extra-posts" style="display:none; margin-top:3rem;">
+        <article class="blog-card coming-soon worm-ai">...your worm ai card...</article>
+        <article class="blog-card coming-soon">...another teaser...</article>
+        <article class="blog-card">...normal post...</article>
+    </div> -->
+
+    
+    </section>
+
+  <footer id="contact">
+    <p>Let's build the future together.</p>
+    <!-- <p style="margin-top: 20px; color: var(--accent);">• waniqbal05@gmail.com </p> -->
+    <p style="margin-top: 30px; font-size: 0.9rem; color: var(--text-light);">© 2025 JecRod. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 50; i++) {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.animationDelay = Math.random() * 15 + 's';
+      p.style.animationDuration = 10 + Math.random() * 20 + 's';
+      particlesContainer.appendChild(p);
+    }
+
+    // Light/Dark Mode
+    const body = document.body;
+    const toggle = document.getElementById('modeToggle');
+    if (localStorage.getItem('theme') === 'light') body.classList.add('light-mode');
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+
+
+    const toggleBtn = document.getElementById('toggle-posts');
+    const extraPosts = document.getElementById('extra-posts');
+
+    toggleBtn.addEventListener('click', function() {
+        if (extraPosts.style.display === 'none' || extraPosts.style.display === '') {
+            extraPosts.style.display = 'grid';
+            extraPosts.style.gridTemplateColumns = 'repeat(auto-fit, minmax(320px, 1fr))';
+            extraPosts.style.gap = '2rem';
+            toggleBtn.textContent = 'Show Less';
+            toggleBtn.style.background = '#00ff88';
+            toggleBtn.style.color = '#000';
+        } else {
+            extraPosts.style.display = 'none';
+            toggleBtn.textContent = 'View All Posts';
+            toggleBtn.style.background = 'transparent';
+            toggleBtn.style.color = '#00ff88';
+        }
+
+831        // Smooth scroll to the posts
+        extraPosts.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+
+
+    //remove this if you has new posts
+    document.getElementById('toggle-posts')?.addEventListener('click', function(e) {
+    e.preventDefault(); // stop any link behavior
+
+    // Create custom styled alert
+    const alertBox = document.createElement('div');
+    alertBox.style.cssText = `
+        position:fixed; top:0; left:0; width:100%; height:100%;
+        background:rgba(0,0,0,0.98); backdrop-filter:blur(10px);
+        display:flex; align-items:center; justify-content:center;
+        z-index:99999; font-family: 'Fira Code', monospace;
+        animation:fadeIn 0.6s ease;
+    `;
+
+    alertBox.innerHTML = `
+        <div style="text-align:center; padding:3rem; border:2px solid #00d4ff; border-radius:16px; background:#000; max-width:500px; box-shadow:0 0 50px #00d4ff;">
+            <h2 style="color:#00d4ff; font-size:3rem; margin:0 0 1rem; text-shadow:0 0 30px #00d4ff; animation:glitch 2s infinite;">
+                COMING SOON
+            </h2>
+            <p style="color:#aaa; font-size:1.3rem; margin:1.5rem 0;">
+                New posts decrypting...<br>
+                <span style="color:#00d4ff;">2025</span>
+            </p>
+            
+            <button onclick="this.parentElement.parentElement.parentElement.remove()" 
+                    style="margin-top:2rem; background:#00d4ff; color:#000; border:none; padding:12px 30px; border-radius:50px; font-weight:900; cursor:pointer; box-shadow:0 0 30px #00d4ff;">
+                CLOSE [ESC]
+            </button>
+        </div>
+    `;
+
+    // Add animations
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes glitch { 0%,100% { text-shadow:0 0 20px #00d4ff; } 50% { text-shadow:0 0 40px #00d4ff, 0 0 60px #00d4ff; } }
+        @keyframes typing { from { width:0 } to { width:100% } }
+        @keyframes blink { 50% { border-color:transparent } }
+        @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+    `;
+    document.head.appendChild(style);
+
+    document.body.appendChild(alertBox);
+
+    // Close with ESC key
+    document.addEventListener('keydown', function handler(e) {
+        if (e.key === 'Escape') {
+            alertBox.remove();
+            document.removeEventListener('keydown', handler);
+        }
+    });
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CTF Cyber Warrior 2025 – Full Detailed Write-Up | JecRod</title>
+  <meta name="description" content="Complete, step-by-step walkthrough of every challenge in PBT CTF Cyber Warrior 2025 with exact commands, tools, and all flags."/>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  
+</head>
+<body>
+
+  <div class="particles" id="particles"></div>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#intro">About</a></li>
+      <li><a href="../index.html#blog" class="active">Blog</a></li>
+      <li><div class="toggle" id="modeToggle"></div></li>
+    </ul>
+  </nav>
+
+  <header class="article-header">
+    <span class="article-category">CTF • Detailed Write-Up • PBT Cyber Warrior 2025</span>
+    <h1 class="article-title">CTF Cyber Warrior 2025<br>Complete & Detailed Walkthrough</h1>
+    <div class="article-meta">
+      <time>November 22, 2025</time> • <span>18 min read</span>
+    </div>
+  </header>
+
+  <article class="article-content">
+
+    <p>Finished <strong>PBT CTF Cyber Warrior 2025</strong> with full points. Below is the most detailed write-up possible — every command, every thought process, every flag.</p>
+
+    <img src="../assets/pic/ctf/ctf-cyber-warrior.png" alt="Kali Linux terminal during CTF">
+    <div class="caption">My setup for the entire event — Kali + tmux + way too many tabs</div>
+
+    <!-- ==================== 1. MARK THE MOMENT ==================== -->
+    <h2>1. Mark the Moment</h2>
+    <div class="challenge-box">
+    <img src="../assets/pic/ctf/convert.png" alt="Shibuya Crossing at night">    
+      <h3>Challenge Description</h3>
+      <p>A specific date and time is given in the question.</p>
+      <h3>Solution</h3>
+      <p>Convert it to Unix timestamp (seconds since 1970-01-01 00:00:00 UTC).</p>
+      <p>Date given: <strong>16 July 2025, 01:00:00 UTC</strong></p>
+      <pre><code>$ date -d "2025-07-16 01:00:00" +%s
+1752627600</code></pre>
+      <p>Or use any online converter → same result.</p>
+      <div class="flag">ctfcw{1752627600}</div>
+    </div>
+
+    <!-- ==================== 2. Neon Scrambles Light ==================== -->
+    <h2>2. Neon Scrambles Light</h2>
+    <div class="challenge-box">
+      <img src="../assets/pic/ctf/neon.png" alt="Shibuya Crossing at night">
+      <div class="caption">Shibuya Crossing — the most iconic neon scramble in the world</div>    
+      <p>Description talks about a famous neon-lit pedestrian scramble crossing seen in countless movies and live webcams.</p>
+      <p>Only one place fits perfectly: <strong>Shibuya Crossing, Tokyo</strong>.</p>
+      
+      <p>Coordinates (rounded to 4 decimals as requested): 35.6595, 139.7005</p>
+      <div class="flag">ctfcw{35.6595,139.7005}</div>
+    </div>
+
+    <!-- ==================== Double Defense ==================== -->
+    <h2>3. Double Defense</h2>
+    <div class="challenge-box">
+      <p>Files: <code>decoder.py</code> + encrypted challenge file.</p>
+      <p>The provided <code>decoder.py</code> is already correct. Just run it:</p>
+      <pre><code>python3 decoder.py</code></pre>
+      <p>Outputs the flag directly.</p>
+      <div class="flag">ctfcw{doubl3_secur3}</div>
+    </div>
+
+    <!-- ==================== Triple Triplet ==================== -->
+    <h2>4. Triple Triplet</h2>
+    <div class="challenge-box">
+      <p>Files: broken <code>decode.py</code> + <code>triplet.enc</code></p>
+      <p>Bug: wrong key or off-by-one in loop. Fixed version:</p>
+      <pre><code># Fixed decode.py
+key = "triple"
+with open("triplet.enc","rb") as f:
+    data = f.read()
+flag = ''.join(chr(b ^ ord(key[i%len(key)])) for i,b in enumerate(data))
+print(flag)</code></pre>
+      <div class="flag">ctfcw{triple_entente}</div>
+    </div>
+
+    <!-- ==================== Multipack Trouble ==================== -->
+    <h2>5. Multipack Trouble & Quadruple Pack Trouble</h2>
+    <div class="challenge-box">
+      <p>Two increasingly complex packing layers. Fixed the generation/decoding scripts step by step (XOR + base64 + gzip repeated).</p>
+      <p>Final flags after fixing both:</p>
+      <div class="flag">ctfcw{multipack_trouble}</div>
+      <div class="flag">ctfcw{multipack_trouble_two}</div>
+    </div>
+
+    <!-- ==================== The Cat Who Loved Me ==================== -->
+    <h2>6. The Cat Who Loved Me</h2>
+    <div class="challenge-box">
+      <p>Image file of a cat → classic steganography.</p>
+      <pre><code>zsteg cat_love.png</code></pre>
+      <p>Flag hidden in LSB of blue channel.</p>
+      <div class="flag">ctfcw{cat_stego_lover}</div>
+    </div>
+
+    <!-- ==================== Flagception ==================== -->
+    <h2>7. Flagception</h2>
+    <div class="challenge-box">
+      <p>30 nested ZIP files. Script to extract all:</p>
+      <pre><code>for i in {1..30}; do unzip flag.zip; mv flag.zip flag_$i.zip 2>/dev/null || break; done
+cat final.txt</code></pre>
+      <div class="flag">CW25{z1pp1ng_m3_s0ftly}</div>
+    </div>
+
+    <!-- ==================== Simsimi ==================== -->
+    <h2>8. Simsimi</h2>
+    <div class="challenge-box">
+      <p>Chatbot source code provided. Hidden comment says: “say pls to get the flag”.</p>
+      <p>Type <code>pls</code> → bot replies with flag.</p>
+      <div class="flag">ctfcw{simsimi_pls_gimme}</div>
+    </div>
+
+    <!-- ==================== Keyboard Smash ==================== -->
+    <h2>9. Keyboard Smash</h2>
+    <div class="challenge-box">
+      <p>Source code contains a long “random” string that is actually the flag typed with keyboard layout shift.</p>
+      <p>Fix the layout → flag appears.</p>
+      <div class="flag">ctfcw{key_smash_master}</div>
+    </div>
+
+    <!-- ==================== Sanity Check ==================== -->
+    <h2>10. Sanity Check</h2>
+    <div class="challenge-box">
+      <p>Join the official Discord → pinned message has a Caesar cipher.</p>
+      <p>Shift 3 → flag.</p>
+      <div class="flag">ctfcw{sanity_restored}</div>
+    </div>
+
+    <h2>Final Score: 100% – All Flags Captured</h2>
+    <p>Amazing beginner-to-intermediate CTF by PBT. Perfect mix of categories, no rabbit holes, and excellent learning curve.</p>
+
+  </article>
+
+  <a href="../" class="back-link">Back to Blog</a>
+
+  <footer>
+    <p>More detailed write-ups. Got a CTF you want dissected? DM me.</p>
+    <p style="margin-top: 30px; font-size: 0.9rem; color: var(--text-light);">© 2025 JecRod. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Particles + Dark Mode (same as before)
+    const p = document.getElementById('particles');
+    for(let i=0;i<80;i++){
+      const e=document.createElement('div'); e.classList.add('particle');
+      e.style.left=Math.random()*100+'vw';
+      e.style.animationDelay=Math.random()*15+'s';
+      e.style.animationDuration=10+Math.random()*25+'s';
+      p.appendChild(e);
+    }
+    const body=document.body, toggle=document.getElementById('modeToggle');
+    if(localStorage.getItem('theme')==='light') body.classList.add('light-mode');
+    toggle.addEventListener('click',()=>{ body.classList.toggle('light-mode');
+      localStorage.setItem('theme',body.classList.contains('light-mode')?'light':'dark');
+    });
+  </script>
+</body>
+</html>

