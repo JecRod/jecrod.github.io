@@ -1,6 +1,6 @@
 ---
 title: "CTF Cyber Warrrior Writeup"
-date: 2026-02-23 10:00:00 +0800
+date: 2025-07-14 10:00:00 +0800
 categories: [CTF]
 tags: [Windows, Easy]
 image:
